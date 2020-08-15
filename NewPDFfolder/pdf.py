@@ -10,3 +10,5 @@ with open('./NewPDFfolder/twopage.pdf', 'rb') as file:
     writer.addPage(page)
     with open('./NewPDFfolder/tilt.pdf', 'wb') as new_file:
         writer.write(new_file)
+
+

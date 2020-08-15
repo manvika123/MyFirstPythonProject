@@ -1,6 +1,6 @@
 from PIL import Image, ImageFilter
 
-img = Image.open('./Pokedex/pikachu.jpg')
+img = Image.open('Pokedex_Images/pikachu.jpg')
 # print(img)
 # print(img.format)
 # print(img.size)

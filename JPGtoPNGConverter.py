@@ -12,7 +12,7 @@ print(image_folder, output_folder)
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-# loop though Pokedex, and converts all images in PNG format
+# loop though Pokedex_Images, and converts all images in PNG format
 for filename in os.listdir(image_folder):
 
     img = Image.open(f'{image_folder}{filename}')

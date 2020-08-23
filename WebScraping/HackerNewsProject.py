@@ -1,12 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
-import pprint  #preety printer
+import pprint  # preety printer
 
 res = requests.get('https://news.ycombinator.com/news')
 soup = BeautifulSoup(res.text, 'html.parser')
 links = soup.select('.storylink')
 # votes = soup.select('.score')
 subtext = soup.select('.subtext')
+
+
+def sort_stories_by_votes(hnlist):
+    return sorted(hnlist, key=lambda k: k['votes'], reverse= True)
 
 
 def create_custom_hn(links, subtext):
@@ -21,7 +25,7 @@ def create_custom_hn(links, subtext):
             # print(points)
             if points > 100:
                 hn.append({'title': title, 'link': href, 'votes': points})
-    return hn
+    return sort_stories_by_votes(hn)
 
 
 pprint.pprint(create_custom_hn(links, subtext))
